@@ -1,4 +1,17 @@
 #################
+## datafiles
+#################
+*.arff
+*.csv
+
+#################
+## pycharm
+#################
+.idea*
+
+
+
+#################
 ## Eclipse
 #################
 
@@ -28,6 +41,9 @@ local.properties
 # PDT-specific
 .buildpath
 
+### added by me
+.metadata*
+.recommenders*
 
 #################
 ## Visual Studio
@@ -214,3 +230,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+
