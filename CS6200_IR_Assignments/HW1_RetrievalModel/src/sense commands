@@ -1,0 +1,77 @@
+
+###############validation of index################
+
+
+
+#validate  numbers of documents, it should be 84678
+GET /ap_dataset/document/_search
+#results:84678
+
+#validate unique terms, it should be around 170k-190K,preferbly 180k
+GET /ap_dataset/document/_search
+{
+  "aggs" : {
+    "unique_terms" : {
+      "cardinality" : {
+        "field" : "text"
+        }
+      }
+    }
+}
+#results: 178081
+
+
+#validate size of index it should around 500MB
+GET _cat/shards?v
+#results: 445.6mb
+
+#validate number of terms, it should be
+
+GET /ap_dataset/document/AP890305-0030/_termvector
+#results: 20984156÷84660=247.86
+
+
+
+
+GET  /ap_dataset/document/_search
+{
+  "query": {
+    "match": {
+      "text": "cat"
+    }
+  },
+  "explain": true,
+  "size": 10000
+}
+
+POST /ap_dataset/document/_search
+{
+  "query": {
+    "function_score": {
+      "query": {
+        "match": {
+          "text": "iran"
+        }
+      },
+      "functions": [
+        {
+          "script_score": {
+            "script_id": "getTF",
+            "lang" : "groovy",
+            "params": {
+              "term": "iran",
+              "field": "text"
+
+            }
+          }
+        }
+      ],
+      "boost_mode": "replace"
+    }
+  },
+  "size": 10000,
+  "fields": ["stream_id"]
+}
+
+
+DELETE ap_dataset
