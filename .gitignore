@@ -234,3 +234,7 @@ pip-log.txt
 
 
 
+home_depot_relevance_prediction/IOFolder/big.txt
+home_depot_relevance_prediction/Original Datasets/relevance_instructions.docx
+home_depot_relevance_prediction/IOFolder/products_info.txt
+home_depot_relevance_prediction/IOFolder/newBig.txt
