@@ -1,0 +1,26 @@
+from reppy.cache import RobotsCache
+
+robots=RobotsCache()
+
+rules=robots.fetch("http://"+"www.northeastern.edu")
+
+print rules.allowed("http://www.northeastern.edu/test/","*")
+print rules.allowed("http://www.northeastern.edu/ccis/","*")
+print rules.allowed("http://www.northeastern.edu/charlotte12/","*")
+print rules.allowed("http://www.northeastern.edu/charlotte_old/","*")
+print rules.allowed("http://www.northeastern.edu/commuter/","*")
+print rules.allowed("http://www.northeastern.edu/news/stories/2011/07/fundraising.html","*")
+print rules.allowed("http://www.northeastern.edu/corporate-old/","*")
+print rules.allowed("http://www.northeastern.edu/experiential/globalexperience/","*")
+print rules.allowed("http://www.northeastern.edu/experiential/servicelearning/","*")
+print rules.allowed("http://www.northeastern.edu/experiential/studentresearch/","*")
+print rules.allowed("http://www.northeastern.edu/nupr/","*")
+print rules.allowed("http://www.northeastern.edu/registrar/archive/","*")
+print rules.allowed("http://www.northeastern.edu/registrar/courses0001/","*")
+print rules.allowed("http://www.northeastern.edu/registrar/courses0103/","*")
+print rules.allowed("http://www.northeastern.edu/registrar/courses0304/","*")
+print rules.allowed("http://www.northeastern.edu/registrar/coursesarchive/","*")
+print rules.allowed("http://www.northeastern.edu/oldnews/","*")
+print rules.allowed("http://www.northeastern.edu/magazine-old/","*")
+print rules.allowed("http://www.northeastern.edu/admissions/undergradhandbook/handbook2010/","*")
+print rules.allowed("http://www.northeastern.edu/facultyhandbook/curriculum-committees-research-oversight/graduate-bylaws.pdf","*")
