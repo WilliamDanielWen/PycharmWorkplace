@@ -1,0 +1,24 @@
+remain:
+
+
+
+
+
+* low accuracy in test file?
+* given regular expression not work?
+
+* add search filed HEAD
+
+
+
+solved:
+* decode files
+* merge files
+* check aux file load ok
+* sort the inverted list for an item
+* create readble version of inverted file
+* mappings from num to id
+* update model and make it work
+*  term frequency test function
+* proximity search,*minimum span
+
