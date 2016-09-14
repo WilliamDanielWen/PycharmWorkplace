@@ -44,28 +44,3 @@ def serried(s,t,n,f):
 
 
 
-#test
-if __name__=="__main__":
-    s1="abcde"
-    s2="pxqyrstuvw"
-
-
-    print len(s1)
-    print len(s2)
-    #(serried s1 "aeiou" 5 0.1) evaluates to true.
-    print serried(s1,"aeiou",5,0.1)
-
-    #(serried s1 "aeiou" 5 0.5) evaluates to false.
-    print serried(s1,"aeiou",5,0.5)
-
-    #(serried s1 "aeiou" 6 0.0) evaluates to false.
-    print serried(s1, "aeiou", 6, 0.0)
-
-    #(serried s2 "qr" 3 0.6) evaluates to true.
-    print serried(s2, "qr", 3, 0.6)
-
-    #(serried s2 s1 7 0.0) evaluates to true.
-    print serried (s2, s1, 7, 0.0)
-
-    # (serried s2 s1 7 0.1) evaluates to false.
-    print serried(s2, s1, 7, 0.1)

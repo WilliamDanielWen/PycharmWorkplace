@@ -59,7 +59,6 @@ class Solution(object):
         left_result=self.lowestCommonAncestor(root.left, p, q)
 
 
-
         if right_result!=None and left_result!=None:
             return root
 
