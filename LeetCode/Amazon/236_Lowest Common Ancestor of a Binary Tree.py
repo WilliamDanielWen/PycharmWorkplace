@@ -51,11 +51,16 @@ class Solution(object):
 
     def lowestCommonAncestor_recursive(self,root,p,q):
 
-        #stop condition
-        if (root==None or root==p or root==q):
+
+        if root == None:
+            # recursion reach the bottom
+            return None
+
+        if root==p or root==q:
             return root
 
         right_result=self.lowestCommonAncestor(root.right, p,q)
+
         left_result=self.lowestCommonAncestor(root.left, p, q)
 
 
