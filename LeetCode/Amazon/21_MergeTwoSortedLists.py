@@ -19,39 +19,37 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        return self.merge_sort(l1,l2)
+
+
+    def merge_sort(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        if l1 == None and l2==None: return None
+        if l1 == None : return l2
+        if l2 == None : return l1
+
 
         mergedList=ListNode(None)
 
-
-        if l1!=None and l2!=None:
-
-            if  l1.val<l2.val:
-                mergedList.val=l1.val
-                l1=l1.next
-                mergedList.next=self.mergeTwoLists( l1, l2)
-            else:
-                mergedList.val = l2.val
-                l2 = l2.next
-                mergedList.next = self.mergeTwoLists(l1, l2)
+        if  l1.val<l2.val:
+            mergedList.val=l1.val
+            l1=l1.next
+            mergedList.next=self.merge_sort( l1, l2)
         else:
-            if  l1==None:
-                mergedList=l2
-            else :
-                if  l2==None:
-                    mergedList = l1
-                else:
-                    # l1 and l2 == None
-                    mergedList = None
+            mergedList.val = l2.val
+            l2 = l2.next
+            mergedList.next = self.merge_sort(l1, l2)
+
 
 
         return  mergedList
 
 
-
-
-# non recursion  version three pointers
-class Solution2(object):
-    def mergeTwoLists(self, l1, l2):
+    def mergeTwoLists_twoPointers(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
@@ -63,6 +61,7 @@ class Solution2(object):
 
         head=ListNode(None)
         pointer=head
+
         while l1 and l2:
             if  l1.val<l2.val:
                 pointer.next=l1
