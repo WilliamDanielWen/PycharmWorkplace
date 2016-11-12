@@ -59,11 +59,13 @@ def generate_sentence(grammar):
 
 import sys
 if __name__ == "__main__":
-    #arg 0 is python script file name
+
     mode = "bash"
-    mode = "python_script"
+
+    #mode = "python_script"
 
     if mode=="bash":
+        # arg 0 is python script file name
         if len(sys.argv) != 3:
             print("   wrong format of bash parameter!")
             print("   Usage:   ./generate [grammar file name] [number of sentences]" )
@@ -77,8 +79,8 @@ if __name__ == "__main__":
             print(generate_sentence(grammar))
             print("")
     else:
-        grammar_file_name = "grammar3"
-        num_sentences = 100
+        grammar_file_name = "grammar5"
+        num_sentences = 10
 
         grammar = read_grammar_file(grammar_file_name)
         for i in range(num_sentences):

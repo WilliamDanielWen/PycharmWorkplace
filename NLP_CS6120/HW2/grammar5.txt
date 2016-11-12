@@ -13,8 +13,9 @@
 # We start the weight for S2 at 0 so that you can play around with
 # generating sentences from your grammar without being confused by the
 # bigram model.
-99	START	S1
-0	START	S2
+
+10	START	S1
+1	START	S2
 
 ## Beginning of human-written grammar.
 
@@ -324,6 +325,37 @@
 
 
 
+
+####################### For Question 2.2 #####################
+##Interesting Patterns:
+
+######## No.1  creating nouns with Superlative adjectives prefix
+10   NP   the SADJ   Noun
+# Superlative adjectives.
+1	SADJ	bloodiest
+1	SADJ	weariest
+1	SADJ	trustiest
+1	SADJ	hottest
+1	SADJ	simplest
+1	SADJ	tiniest
+1	SADJ	hardest
+
+
+# No.2  ######## creating question sentence that seems to be "polite".
+10 S1 AuxI I VB  NP QuestionMark
+10 S1 AuxI I VB  NP QuestionMark
+
+1	AuxI	can
+1	AuxI	could
+1	AuxI	may
+
+# No.3 ##### creating sentence with  adverbial of reason.
+10	S1	NP VP because   NP VP
+
+
+####################### End Question 2.2 #####################
+
+
 # Coordinating conjunctions.
 0	Misc	so
 0	Misc    either
@@ -333,9 +365,7 @@
 
 
 # Modals.
-1	Misc	can
-1	Misc	could
-1	Misc	may
+
 1	Misc	might
 1	Misc	must
 1	Misc	ought
@@ -382,7 +412,6 @@
 1	Misc	that
 1	Misc	so
 1	Misc	while
-1	Misc	because
 1	Misc	if
 
 
@@ -419,33 +448,13 @@
 1	Misc	harder
 
 
-
-# Superlative adjectives.
-1	Misc	bloodiest
-1	Misc	weariest
-1	Misc	trustiest
-1	Misc	hottest
-1	Misc	simplest
-1	Misc	tiniest
-1	Misc	hardest
-
-
-
-
-
 # Plural proper nouns.
 1	Misc	Britons
 1	Misc	Saxons
 
 
-
-
-
-
 # Possessive personal pronouns plural
 1	Misc	their
-
-
 
 
 # 'to'
@@ -453,8 +462,6 @@
 
 # 'not'
 1	NOT	not
-
-
 
 # Wh-determiners.
 1	Misc	that
@@ -472,30 +479,69 @@
 1	Misc	where
 1	Misc	why
 
-
 # Possessive marker.
 1	Misc	's
 
 
 
-##################### S2 tag bigram model
+############################ S2 tag bigram model #######################
 
-# You may change the weights here or add new rules if you introduce
-# new tags.
+# this model tends to produce sentences that tends to
+# create short subject and very long object
 
-4	S2	_Det
+0	S2	_Det
 0	S2	_Misc
 0	S2	_Noun
 0	S2	_Prep
 1	S2	_Proper
 0	S2	_VerbT
+
+
 0	_Det	Det
 0	_Det	Det _Det
 0	_Det	Det _Misc
-4	_Det	Det _Noun
+1	_Det	Det _Noun
 0	_Det	Det _Prep
 0	_Det	Det _Proper
 0	_Det	Det _VerbT
+
+
+0	_Proper	Proper
+0	_Proper	Proper _Det
+0	_Proper	Proper _Misc
+0	_Proper	Proper _Noun
+0	_Proper	Proper _Prep
+0	_Proper	Proper _Proper
+1	_Proper	Proper _VerbT
+
+1	_Noun	Noun _Period
+0	_Noun	Noun _Det
+0	_Noun	Noun _Misc
+0	_Noun	Noun _Noun
+10	_Noun	Noun _Prep
+0	_Noun	Noun _Proper
+0	_Noun	Noun _VerbT
+
+1 _Period Period
+
+0	_Prep	Prep
+1	_Prep	Prep _Det
+0	_Prep	Prep _Misc
+0	_Prep	Prep _Noun
+0	_Prep	Prep _Prep
+0	_Prep	Prep _Proper
+0	_Prep	Prep _VerbT
+
+
+0	_VerbT	VerbT
+0	_VerbT	VerbT _Det
+0	_VerbT	VerbT _Misc
+1	_VerbT	VerbT _Noun
+0	_VerbT	VerbT _Prep
+0	_VerbT	VerbT _Proper
+0	_VerbT	VerbT _VerbT
+
+
 0	_Misc	Misc
 0	_Misc	Misc _Det
 0	_Misc	Misc _Misc
@@ -503,31 +549,8 @@
 0	_Misc	Misc _Prep
 0	_Misc	Misc _Proper
 0	_Misc	Misc _VerbT
-1	_Noun	Noun Period
-0	_Noun	Noun _Det
-0	_Noun	Noun _Misc
-0	_Noun	Noun _Noun
-4	_Noun	Noun _Prep
-0	_Noun	Noun _Proper
-0	_Noun	Noun _VerbT
-0	_Prep	Prep
-1	_Prep	Prep _Det
-0	_Prep	Prep _Misc
-0	_Prep	Prep _Noun
-0	_Prep	Prep _Prep
-1	_Prep	Prep _Proper
-0	_Prep	Prep _VerbT
-1	_Proper	Proper Period
-0	_Proper	Proper _Det
-0	_Proper	Proper _Misc
-0	_Proper	Proper _Noun
-0	_Proper	Proper _Prep
-0	_Proper	Proper _Proper
-0	_Proper	Proper _VerbT
-0	_VerbT	VerbT
-0	_VerbT	VerbT _Det
-0	_VerbT	VerbT _Misc
-0	_VerbT	VerbT _Noun
-0	_VerbT	VerbT _Prep
-0	_VerbT	VerbT _Proper
-0	_VerbT	VerbT _VerbT
+
+
+
+
+

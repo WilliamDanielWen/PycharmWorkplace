@@ -29,8 +29,8 @@
 20	NP	Det Nbar
 1	NP	Proper
 
-4	Nbar	Noun
-1	Nbar	Nbar PP
+2	Nbar	Noun
+2	Nbar	Nbar PP
 
 1	PP	Prep NP
 

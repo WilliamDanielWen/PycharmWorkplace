@@ -22,7 +22,7 @@
 # This is a very, very, very simple grammar to get you started.
 
 
-# For Question 1
+################################## For Question 1 ################################
 1	S1	NP	VP	Period
 
 1	VP	VerbT NP
@@ -125,6 +125,7 @@
 # End-of-sentence.
 1	Period	.
 
+################################## END Question 1 ################################
 
 
 #########################  For Question 2.1 ######################
@@ -161,7 +162,6 @@
 1	VB	suggest
 1	VB	migrate
 1	VB	know
-
 
 
 
@@ -255,11 +255,11 @@
 1	CD	sixty
 1	CD	5,000
 
-1000   PP Prep CD NNS
+1   PP Prep CD NNS
 
 
 ########### No.7 sentence expansion: Arthur and Guinevere migrate frequently .   ####################
-1   S1  NPS VB RB
+1   S1  NPS VB RB   Period
 
 1    NPS    NP and  NP
 1   NP  Proper
@@ -275,7 +275,7 @@
 1	RB	unfortunately
 
 ########### No.8 sentence expansion: he knows what they are covering with that story .   ####################
-1   S1  PRP VerbT what PRPS are VBG PP
+1   S1  PRP VerbT what PRPS are VBG PP  Period
 
 
 # Personal pronoun
@@ -293,7 +293,7 @@
 
 ########### No.9 sentence expansion: the king drank to the castle that was his home .    ####################
 
-1   S1  NP  VBD PP  AdjClause
+1   S1  NP  VBD PP  AdjClause   Period
 
 # Verbs (past tense).
 1	VBD	had
@@ -325,6 +325,35 @@
 
 
 
+####################### For Question 2.2 #####################
+##Interesting Patterns:
+
+######## No.1  creating nouns with Superlative adjectives prefix
+10   NP   the SADJ   Noun
+# Superlative adjectives.
+1	SADJ	bloodiest
+1	SADJ	weariest
+1	SADJ	trustiest
+1	SADJ	hottest
+1	SADJ	simplest
+1	SADJ	tiniest
+1	SADJ	hardest
+
+
+# No.2  ######## creating question sentence that seems to be "polite".
+10 S1 AuxI I VB  NP QuestionMark
+10 S1 AuxI I VB  NP QuestionMark
+
+1	AuxI	can
+1	AuxI	could
+1	AuxI	may
+
+# No.3 ##### creating sentence with  adverbial of reason.
+10	S1	NP VP because   NP VP
+
+
+####################### End Question 2.2 #####################
+
 
 # Coordinating conjunctions.
 0	Misc	so
@@ -335,9 +364,7 @@
 
 
 # Modals.
-1	Misc	can
-1	Misc	could
-1	Misc	may
+
 1	Misc	might
 1	Misc	must
 1	Misc	ought
@@ -345,8 +372,6 @@
 1	Misc	should
 1	Misc	will
 1	Misc	would
-
-
 
 
 
@@ -386,7 +411,6 @@
 1	Misc	that
 1	Misc	so
 1	Misc	while
-1	Misc	because
 1	Misc	if
 
 
@@ -404,7 +428,7 @@
 1	Misc	lucky
 1	Misc	simple
 1	Misc	tiny
-1	Misc	hard	
+1	Misc	hard
 1	Misc	sensational
 1	Misc	comparable
 1	Misc	angolian
@@ -423,33 +447,13 @@
 1	Misc	harder
 
 
-
-# Superlative adjectives.
-1	Misc	bloodiest
-1	Misc	weariest
-1	Misc	trustiest
-1	Misc	hottest
-1	Misc	simplest
-1	Misc	tiniest
-1	Misc	hardest
-
-
-
-
-
 # Plural proper nouns.
 1	Misc	Britons
 1	Misc	Saxons
 
 
-
-
-
-
 # Possessive personal pronouns plural
 1	Misc	their
-
-
 
 
 # 'to'
@@ -457,8 +461,6 @@
 
 # 'not'
 1	NOT	not
-
-
 
 # Wh-determiners.
 1	Misc	that
@@ -476,18 +478,12 @@
 1	Misc	where
 1	Misc	why
 
-
 # Possessive marker.
 1	Misc	's
 
 
 
-
-
-
-
-
-## S2 tag bigram model
+##################### S2 tag bigram model
 
 # You may change the weights here or add new rules if you introduce
 # new tags.

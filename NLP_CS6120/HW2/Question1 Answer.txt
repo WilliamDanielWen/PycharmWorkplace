@@ -1,0 +1,54 @@
+Question 1 Explanation:
+By increasing the probability of recursive rule 	"Nbar->	Nbar PP", grammar2 tends to
+produce longer sentences.
+
+
+
+
+Grammar1 ten random sentences:
+
+every servant covers a land .
+
+another fruit is each home .
+
+that sovereign has that sovereign .
+
+any corner carries each weight .
+
+another story has any quest .
+
+that master below the sovereign has a home .
+
+every land has another fruit .
+
+a land drinks this servant .
+
+another husk carries any winter into each husk .
+
+each sovereign covers each servant .
+
+
+
+
+
+
+Grammar2 ten random sentences:
+the land with the home with any winter at that chalice is a defeater .
+
+no chalice above any weight drinks the quest .
+
+no master over this chalice is any quest near the fruit on the defeater near no servant above that horse with a pound through that sovereign .
+
+every defeater has each sovereign .
+
+Arthur is Zoot .
+
+that fruit from no winter rides that sovereign .
+
+this master carries every swallow .
+
+a chalice near the master above a home near a swallow drinks that coconut .
+
+another horse has the sovereign .
+
+any servant covers any horse over the chalice of each story by any defeater from the weight .
