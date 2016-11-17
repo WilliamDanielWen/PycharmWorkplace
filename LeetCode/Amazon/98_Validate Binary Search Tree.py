@@ -24,8 +24,6 @@ Binary tree [1,2,3], return false.
 #         self.left = None
 #         self.right = None
 import sys
-
-
 class Solution(object):
     def isValidBST(self, root):
         """
