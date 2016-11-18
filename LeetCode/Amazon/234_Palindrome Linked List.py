@@ -32,11 +32,11 @@ class Solution(object):
             fast=fast.next.next
 
         # odd number move the middle to the "middle", the middle element should be neglected
-        if  fast.next!=None:
-            middle=middle.next
+        if  fast.next != None:
+            middle = middle.next
 
-        middle=middle.next
-        while middle!=None:
+        middle = middle.next
+        while middle != None:
             element=stack.pop()
             if element.val!=middle.val: return  False
             middle=middle.next
